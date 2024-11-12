@@ -1,17 +1,16 @@
 package com.tistory.cnux9.calculator2;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Calculator {
-    ArrayList<Integer> resultList;
+    ArrayList<Double> resultList;
 
     public Calculator() {
         resultList = new ArrayList<>();
     }
 
-    public int calculate(int num1, int num2, char operator) {
-        int result = 0;
+    public double calculate(double num1, double num2, char operator) {
+        double result = 0;
         switch (operator) {
             case '+':
                 result = num1 + num2;
@@ -37,16 +36,20 @@ public class Calculator {
         return result;
     }
 
-    public int getResult(int index) {
+    public double getResult(int index) {
         return resultList.get(index);
     }
 
-    public void setResult(int index, int value) {
+    public void setResult(int index, double value) {
         resultList.set(index, value);
     }
 
     public void removeFirstResult() {
         resultList.remove(0);
+    }
+
+    public double[] getResultsAtLeast(double min) {
+        return resultList.stream().mapToDouble(Double::valueOf).filter(n -> n>min).toArray();
     }
 }
 
