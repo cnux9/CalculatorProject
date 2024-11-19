@@ -19,7 +19,8 @@ public class App {
         System.out.print("실수형 계산기를 원하시면 double을, 아니라면 double을 제외한 아무값이나 입력해주세요: ");
         String inputText0 = sc.nextLine();
         isDouble = inputText0.equals("double");
-//        System.out.println("isDouble = " + isDouble);
+
+        System.out.println((isDouble ? "실수" : "정수") + "형 계산기입니다!\n");
 
         if (isDouble) {
             runCalculator(new Calculator<Double>(), Double::parseDouble, Calculator::calculateDouble);
@@ -47,7 +48,7 @@ public class App {
                 T num1 = parser.parse(inputText1);
                 T num2 = parser.parse(inputText2);
                 double result = calculator.calculate(num1, num2, operator, typeCalculator);
-                System.out.println("결과: " + result);
+                System.out.println("결과: " + result + "\n");
             } catch (ArithmeticException e) {
                 System.out.println("0로 나눌 수 없습니다.");
             }
@@ -55,7 +56,7 @@ public class App {
             // 추가 기능 루프
             boolean doAdditionalFeature = true;
             while(doAdditionalFeature) {
-                System.out.print("계속 계산을 진행하시겠습니까?(확인: check, 필터링: filter, 수정: edit, 첫 번째 결과 제거: remove, 종료: exit): ");
+                System.out.print("계속 계산을 진행하시겠습니까?(확인: check, 필터링: filter, 수정: edit, 첫 번째 결과 제거: remove, 종료: exit):");
                 String inputString = sc.nextLine();
                 int index;
                 double value;
@@ -95,6 +96,7 @@ public class App {
                     default:
                         doAdditionalFeature = false;
                 }
+                System.out.println();
             }
         }
     }
