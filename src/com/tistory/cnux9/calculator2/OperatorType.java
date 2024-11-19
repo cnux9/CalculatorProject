@@ -4,6 +4,7 @@ public enum OperatorType {
     ADD('+'), SUBTRACT('-'), MULTIPLY('*'), DIVIDE('/');
     private final char symbol;
 
+    // 변수 symbol 을 연산자 기호 char 형으로 초기화
     OperatorType(char operatorType) {
         this.symbol = operatorType;
     }

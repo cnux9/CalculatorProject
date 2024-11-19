@@ -20,8 +20,6 @@ public class App {
         String inputText0 = sc.nextLine();
         isDouble = inputText0.equals("double");
 //        System.out.println("isDouble = " + isDouble);
-        
-
 
         if (isDouble) {
             runCalculator(new Calculator<Double>(), Double::parseDouble, Calculator::calculateDouble);
@@ -43,7 +41,6 @@ public class App {
 
             System.out.print("사칙연산 기호를 입력해주세요: ");
             char operator = sc.nextLine().charAt(0);
-//            OperatorType operatorType = OperatorType.;
 
             // 연산, 결과 출력
             try {
@@ -105,12 +102,5 @@ public class App {
     private static void setIsDouble(String text) {
         isDouble = DOUBLE_PATTERN.matcher(text).matches();
     }
-
-//    private static <T extends Number> double parse(String text) {
-//        if (T instanceof Double) {
-//            return Double.parseDouble(text);
-//        }
-//        return Integer.parseInt(text);
-//    }
 }
 
