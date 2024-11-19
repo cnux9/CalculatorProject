@@ -3,6 +3,11 @@
 
 # 계산기 예제
 
+
+입력받은 두 숫자로 사칙연산을 수행할 수 있는 자바 프로그램입니다.
+대략적인 실행 과정은 아래와 같습니다.
+
+
 1. 입력값이 double형인지 int형인지 선택합니다.
 2. 두 숫자와 연산자를 입력합니다.
 3. 연산결과를 출력합니다
@@ -125,23 +130,25 @@ Process finished with exit code 0
 
 ---
 
-## 코드 구성
+## 구성
 
-- App.main
-  - runCalculator
-    - Parser.parse
-    - Calculator.calculate
-      - Calculator.isAllowedType
-      - TypeCalculator.calculate
-        - Calculator.calculateInt
-        - Calculator.calculateDouble
+- **`App.main()`**  
+  - **`double`형 / `int`형 결정**
 
+- **`runCalculator()`**  
+  - **메인 계산 루프**
+    - **`Parser.parse()`**: 입력받은 텍스트를 숫자형으로 변환
+    - **`Calculator.calculate()`**: 사칙연산 수행
+      - **`Calculator.isAllowedType()`**: 타입 유효성 검사
+      - **`TypeCalculator.calculate()`**:  
+        - **`Calculator.calculateInt()`**: 정수형 계산
+        - **`Calculator.calculateDouble()`**: 실수형 계산
 
-    - 추가 기능
-      - Calculator.getResult
-      - Calculator.setResult
-      - Calculator.removeFirstResult
-      - Calculator.getResultsAtLeast
+  - **추가 기능**
+    - **`Calculator.getResult()`**: 결과 리스트 조회
+    - **`Calculator.setResult()`**: 결과 리스트 수정
+    - **`Calculator.removeFirstResult()`**: 첫 번째 결과값 제거
+    - **`Calculator.getResultsAtLeast()`**: 필터링된 결과값 나열
 
 
 
