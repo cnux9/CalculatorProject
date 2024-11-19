@@ -74,7 +74,7 @@ public class App {
                         value = sc.nextDouble();
                         sc.nextLine();
                         double[] resultArray = calculator.getResultsAtLeast(value); // double or int?
-                        String resultString = Arrays.stream(resultArray).mapToObj(Double::toString).collect(Collectors.joining(", "));
+                        String resultString = Arrays.stream(resultArray).mapToObj(Double::toString).collect(Collectors.joining(", ")); // 스트림을 통해
                         System.out.println("결과: " + resultString);
                         break;
                     case "edit":
