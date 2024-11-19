@@ -57,7 +57,7 @@ public class Calculator<T extends Number> {
                 if (num2 == 0) {
                     throw new ArithmeticException("/ by zero");
                 }
-                yield num1 / num2;
+                yield (double)num1 / num2;
             }
         };
     }
