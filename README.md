@@ -138,6 +138,12 @@ if (isDouble) {
 따라서, **`Parser`와 `TypeCalculator`를 구현하여**  
 `main` 메소드에서 `double` 또는 `int`를 결정하고,  
 적절한 메소드를 `runCalculator`에 전달하여 계산이 이루어지도록 만들었습니다.
+```
+@FunctionalInterface
+interface TypeCalculator<T extends Number> {
+    Double calculate(T num1, T num2, char operator);
+}
+```
 
 ---
 
