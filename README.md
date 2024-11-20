@@ -113,6 +113,14 @@ Process finished with exit code 0
 `Double::parseDouble`, `Integer::parseInt`와 같은 메서드를 인자로 전달합니다.  
 산술 연산이 필요한 부분도 따로 메소드를 추출하여 메서드 참조를 통해 처리하도록 만듭니다.
 
+```
+if (isDouble) {
+    runCalculator(new Calculator<Double>(), Double::parseDouble, Calculator::calculateDouble);
+} else {
+    runCalculator(new Calculator<Integer>(), Integer::parseInt, Calculator::calculateInt);
+}
+```
+
 ---
 
 ## 결론
